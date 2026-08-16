@@ -1,0 +1,9 @@
+python-dotenv
+langchain
+langchain-community
+chromadb
+pandas
+jupyter
+streamlit
+fastapi
+uvicorn
