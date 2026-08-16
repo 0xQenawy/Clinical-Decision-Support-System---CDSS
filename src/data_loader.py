@@ -1,11 +1,11 @@
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyMuPDFLoader
 from src.config import CHUNK_SIZE, CHUNK_OVERLAP, RAW_DATA_DIR
 
 def load_pdfs():
     all_pages = []
     for pdf_path in RAW_DATA_DIR.glob('*.pdf'):
-        loader = PyPDFLoader(str(pdf_path))
+        loader = PyMuPDFLoader(str(pdf_path))
         pages = loader.load()
         for page in pages:
             page.metadata['document_name'] = pdf_path.name
