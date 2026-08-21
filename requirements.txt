@@ -1,9 +1,34 @@
+# Core RAG pipeline
 python-dotenv
 langchain
 langchain-community
+langchain-classic
+langchain-core
+langchain-groq
+langchain-openai
+
+# Vector store & embeddings
 chromadb
+sentence-transformers
+
+# Retrieval
+rank-bm25
+
+# Data & evaluation
 pandas
-jupyter
-streamlit
+ragas
+datasets
+
+# PDF ingestion
+pymupdf
+
+# API backend
 fastapi
-uvicorn
+uvicorn[standard]
+pydantic
+
+# Frontend alternative
+streamlit
+
+# Notebooks
+jupyter

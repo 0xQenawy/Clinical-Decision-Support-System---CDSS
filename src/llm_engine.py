@@ -44,7 +44,13 @@ def get_hybrid_retriever(vectorstore, k=3):
     Combines Semantic Search (Chroma) with Keyword Search (BM25) using RRF.
     """
     # 1. Setup Semantic Retriever
-    vector_retriever = vectorstore.as_retriever(search_kwargs={"k": k})
+    vector_retriever = vectorstore.as_retriever(
+        search_type="similarity_score_threshold",
+        search_kwargs={
+            "score_threshold": 0.75,
+            "k": 3
+        }
+    )
     
     # 2. Extract docs from Chroma to build BM25 Retriever
     collection = vectorstore._collection.get()
